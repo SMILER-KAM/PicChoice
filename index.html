@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container text-center mt-2">
+        <h1>VOTE</h1>
+    </div>
+    <br>
+    <div class="container text-center">
+        <div class="d-flex flex-nowrap justify-content-center"> 
+            <div class="card" style="width: 18rem;">
+                <img src="picture1.jpg" class="card-img-top" alt="PICTURE-1">
+                <div class="card-body">
+                    <div class="card-title">PICTURE-1</div>
+                    <button type="button" class="btn btn-success" onclick="vote1()">VOTE</button>
+                    <div id="vote1">Votes: 0</div>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="picture2.jpg" class="card-img-top" alt="PICTURE-2">
+                <div class="card-body">
+                    <div class="card-title">PICTURE-2</div>
+                    <button type="button" class="btn btn-success" onclick="vote2()">VOTE</button>
+                    <div id="vote2">Votes: 0</div>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="picture3.jpg" class="card-img-top" alt="PICTURE-3">
+                <div class="card-body">
+                    <div class="card-title">PICTURE-3</div>
+                    <button type="button" class="btn btn-success" onclick="vote3()">VOTE</button>
+                    <div id="vote3">Votes: 0</div>
+                </div>
+            </div>
+        
+        </div>
+        <button class="btn btn-danger mt-3" onclick="resetVotes()">RESET ALL VOTES</button>
+    </div>
+    <script>
+        let count1 = localStorage.getItem("count1") ? parseInt(localStorage.getItem("count1")) : 0;
+        let count2 = localStorage.getItem("count2") ? parseInt(localStorage.getItem("count2")) : 0;
+        let count3 = localStorage.getItem("count3") ? parseInt(localStorage.getItem("count3")) : 0;
+
+        document.getElementById("vote1").innerText = "Votes: " + count1;
+        document.getElementById("vote2").innerText = "Votes: " + count2;
+        document.getElementById("vote3").innerText = "Votes: " + count3;
+
+
+        function vote1() 
+        {
+            count1++;
+            localStorage.setItem("count1", count1);
+            document.getElementById("vote1").innerText = "Votes: " + count1;
+        }
+
+        function vote2() 
+        {
+            count2++;
+            localStorage.setItem("count2", count2);
+            document.getElementById("vote2").innerText = "Votes: " + count2;
+        }
+
+        function vote3() 
+        {
+            count3++;
+            localStorage.setItem("count3", count3);
+            document.getElementById("vote3").innerText = "Votes: " + count3;
+        }
+        function resetVotes() 
+        {
+            count1 = 0;
+            count2 = 0;
+            count3 = 0;
+            localStorage.setItem("count1", count1);
+            localStorage.setItem("count2", count2);
+            localStorage.setItem("count3", count3);
+            document.getElementById("vote1").innerText = "Votes: 0";
+            document.getElementById("vote2").innerText = "Votes: 0";
+            document.getElementById("vote3").innerText = "Votes: 0";
+    }
+
+    </script>
+</body>
+</html>
