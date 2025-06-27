@@ -1,4 +1,3 @@
-
 let count1 = localStorage.getItem("count1") ? parseInt(localStorage.getItem("count1")) : 0;
 let count2 = localStorage.getItem("count2") ? parseInt(localStorage.getItem("count2")) : 0;
 let count3 = localStorage.getItem("count3") ? parseInt(localStorage.getItem("count3")) : 0;
