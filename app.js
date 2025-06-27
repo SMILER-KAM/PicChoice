@@ -83,3 +83,50 @@ function showThankYou()
     setTimeout(() => 
     { document.getElementById('thankYouBox').style.visibility = 'hidden';}, 1000);
 }
+
+function enter()
+{
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    if (email && password) 
+    {
+        alert(`Signed in as: ${email}`);
+        window.location.href = "dashboard.html";
+    } 
+    else 
+    {
+        alert('Please enter both email and password.');
+    }
+}
+function signup()
+{
+    document.getElementById('main').innerHTML=`
+    <h3>SIGN UP</h3>
+    <br>
+    <form>
+        <input placeholder="Enter E-Mail ID" class="form-control mt-2" type="email" required id="email">
+        <input placeholder="Enter Password" class="form-control mt-2" type="password" required id="password">
+        <br> <br>
+        <button type="button" class="btn btn-primary w-100 mb-2" onclick="enter()" id="btn1">Sign Up</button>
+        <p>
+            Already have an account? 
+            <button type="button" class="btn btn-dark" onclick="signin()" id="btn2">Sign In</button>
+        </p>
+    </form>`
+}
+function signin()
+{
+    document.getElementById('main').innerHTML=`
+    <h3>SIGN IN</h3>
+    <br>
+    <form>
+        <input placeholder="Enter E-Mail ID" class="form-control mt-2" type="email" required id="email">
+        <input placeholder="Enter Password" class="form-control mt-2" type="password" required id="password">
+        <br> <br>
+        <button type="button" class="btn btn-primary w-100 mb-2" onclick="enter()" id="btn1">Sign In</button>
+        <p>
+            Don't have an account? 
+            <button type="button" class="btn btn-dark" onclick="signup()" id="btn2">Sign Up</button>
+        </p>
+    </form>`
+}
