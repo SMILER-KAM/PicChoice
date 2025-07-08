@@ -29,13 +29,13 @@
     </video>
 
     <!-- heading section -->
-    <div class="container text-center text-white mt-4 mb-2">
+    <div class="container text-center text-white mt-4 mb-4">
         <h1>VOTE</h1>
     </div>
 
     <!-- form section -->
     <div class="container text-center">
-        <div class="card position-fixed top-50 start-50 translate-middle bg-dark text-white">
+        <div class="card position-fixed top-50 start-50 translate-middle bg-dark text-white w-100" style="max-width: 400px;">
             <div class="card-body" id="main">
                 <!-- error section -->
                 {% if error %}
@@ -47,11 +47,11 @@
                 <form method="post" action="">
                     {% csrf_token %}
                     <!-- username -->
-                    <input placeholder="Enter E-Mail ID" class="form-control mt-2 mb-2"  type="email" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" aria-describedby="id_username_helptext" id="username">
+                    <input placeholder="Enter E-Mail ID" class="form-control mt-4 mb-2"  type="email" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" aria-describedby="id_username_helptext" id="username">
                     <!-- password -->
                     <div>
                         <label for="id_password1">Password Rules:</label>
-                        <div class="helptext text-start" id="id_password1_helptext">
+                        <div class="helptext text-start" id="id_password1_helptext" style="max-height: 50px; overflow-y: auto; font-size: 0.85rem;">
                             <ul>
                                 <li>Your password can’t be too similar to your other personal information.</li>
                                 <li>Your password must contain at least 8 characters.</li>
@@ -59,7 +59,7 @@
                                 <li>Your password can’t be entirely numeric.</li>
                             </ul>
                         </div>
-                        <input placeholder="Enter Password" class="form-control mt-2 mb-2" type="password" name="password1" autocomplete="new-password" required="" aria-describedby="id_password1_helptext" id="id_password1">
+                        <input placeholder="Enter Password" class="form-control mt-3 mb-2" type="password" name="password1" autocomplete="new-password" required="" aria-describedby="id_password1_helptext" id="id_password1">
                     </div>
                     <!-- confirm password -->
                     <div>
@@ -72,7 +72,7 @@
                     <!-- switch to signin -->
                     <p class="mt-2">
                         Already have an account? 
-                        <a type="button" class="btn btn-dark" id="btn2" href="{% url 'loginuser' %}">Sign In</a>
+                        <a class="btn btn-dark" id="btn2" href="{% url 'loginuser' %}">Sign In</a>
                     </p>
                 </form>
             </div>

@@ -21,9 +21,9 @@ from vote import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
-    path('loginuser',views.loginuser,name='loginuser'),
-    path('signupuser',views.signupuser,name='signupuser'),
-    path('logoutuser',views.logoutuser,name='logoutuser'),
-    path('castvote',views.castvote,name='castvote'),
+    path('loginuser/',views.loginuser,name='loginuser'),
+    path('signupuser/',views.signupuser,name='signupuser'),
+    path('logoutuser/',views.logoutuser,name='logoutuser'),
+    path('castvote/',views.castvote,name='castvote'),
     path('resetvotes/', views.resetvotes, name='resetvotes'),
 ]
